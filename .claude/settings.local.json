@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(curl -s http://localhost:9000/api/stats)",
+      "Bash(pkill -f \"uvicorn app:app\")"
+    ]
+  }
+}
