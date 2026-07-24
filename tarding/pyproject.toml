@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "market-agents"
+version = "0.1.0"
+description = "基于 LangGraph 的可审计多智能体股票分析终端"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "langgraph>=0.2.60",
+  "pydantic>=2.8",
+  "pydantic-settings>=2.4",
+  "python-dotenv>=1.0",
+  "typer>=0.12",
+  "rich>=13.7",
+  "yfinance>=0.2.54",
+  "openai>=1.50",
+  "anthropic>=0.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2", "pytest-cov>=5.0"]
+
+[project.scripts]
+market-agents = "market_agents.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["market_agents"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+

@@ -1,0 +1,14 @@
+data_sources:
+  price:
+    primary: yfinance
+    fallback: [mock]
+  fundamentals:
+    primary: yfinance
+    fallback: [mock]
+  news:
+    primary: yfinance
+    fallback: [mock]
+  macro:
+    primary: mock
+    fallback: []
+
